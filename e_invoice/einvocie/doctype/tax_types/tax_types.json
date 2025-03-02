@@ -1,0 +1,90 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:code",
+ "creation": "2022-06-07 10:29:45.145342",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "code",
+  "desc_en",
+  "fixed_amount",
+  "column_break_4",
+  "desc_ar",
+  "taxable",
+  "taxtypereference"
+ ],
+ "fields": [
+  {
+   "fieldname": "code",
+   "fieldtype": "Data",
+   "label": "Code",
+   "unique": 1
+  },
+  {
+   "fieldname": "desc_en",
+   "fieldtype": "Data",
+   "label": "Desc_en"
+  },
+  {
+   "fieldname": "desc_ar",
+   "fieldtype": "Data",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Desc_ar"
+  },
+  {
+   "fieldname": "taxtypereference",
+   "fieldtype": "Data",
+   "label": "TaxtypeReference"
+  },
+  {
+   "default": "0",
+   "fieldname": "taxable",
+   "fieldtype": "Check",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Taxable"
+  },
+  {
+   "default": "0",
+   "fieldname": "fixed_amount",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Fixed Amount"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-07-27 14:46:56.322248",
+ "modified_by": "Administrator",
+ "module": "EINVOCIE",
+ "name": "Tax Types",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "desc_ar,desc_en,code",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "desc_en"
+}
