@@ -1,0 +1,22 @@
+Sales Invoice 
+method = POST
+END POINT  = e_invocie.einvocie.apis.sales_invoice
+FIELDS :
+    "target"  : ["Create" ,"Update" , "Delete"]
+    "customer"  : "customer local id  or customer name "
+    date_issued = date time iso format like 2021-12-28T10:11:32Z
+    items = [
+        {
+            "item_code"        :  string  #required field item local id 
+            "qty"              :  float   #required field 
+            "rate"             :  float   #required field 
+            "discount_amount"  :  float
+            "discount_percent" :  float
+            "item_tax"         :  string  # item tax template local  id or title
+        }
+    ]
+_
+
+_________________________________
+SUCCESS REPONSE  =  {"status_code" :200 , "message" : invoice Erp name}
+ERROR RESPONE = {"status_code" : 400 , "message" :  Error message from erp }

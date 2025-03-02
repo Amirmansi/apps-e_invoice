@@ -1,0 +1,145 @@
+
+Create Sales Invoice
+methd= POST 
+url = "http://178.18.250.45:2222/api/method/e_invoice.einvocie.apis.sales_invoice"
+headers  =  {
+                            'Authorization': "Token dfe44da42b9032a:d24f54377f0af1b"
+
+                 }
+
+Payload = {
+    "customer" : customer local ID , String
+    "date_issued"  : "2022-03-08T11:11:32Z" , String in Iso Format 
+    "items" : [                         , List Of Objects 
+                     {"item_code" : "21010201"   Local System Item Code , String 
+                      "qty" : 1 , Number 
+                      "rate" : 100  ,Float Number
+                       "uom" : EA , String One of Tax Auth Accepted Unit of Masure
+                     }
+    ]
+}
+
+_______________________________________________________________________________________________
+
+Create Item And Update Item
+
+method = POST
+url = "http://178.18.250.45:2222/api/method/e_invoice.einvocie.item_api.create_item"
+headers  =  {
+                            'Authorization': "Token dfe44da42b9032a:d24f54377f0af1b"
+
+                 }
+Payload = {
+      "item_code" : String Local Item Code ,
+      "item_name" String Item Arabic Name , 
+      "zero_tax"  : 0 or 1 ,
+      "uom" : Tax Auth Accepted Unit of Masure , Defaulte uom factor =1  ,
+      "uom_list" :{  "data" :
+                    [                       , List Of Objects 
+                                {
+                                    "uom" : String unit  ,
+                                    "conversion_factor" : number , 
+                                }
+                    ]
+                }
+      
+
+
+}
+_____________________________________________________________________________
+
+Updat Item 
+
+method = POST
+url = "http://178.18.250.45:2222/api/method/e_invoice.einvocie.item_api.upadate_item"
+headers  =  {
+                            'Authorization': "Token dfe44da42b9032a:d24f54377f0af1b"
+
+                 }
+Payload = {
+
+    "item_code" : String ,
+    "item_name" :String ,
+    "zero_tax"  : 0 or 1 ,
+    "uom_list" : {"data" : [
+                                {
+                                    "uom" : String unit  ,
+                                    "conversion_factor" : number , 
+                                }
+                            ]
+                } 
+}
+___________________________________________________________________________________
+
+Create Customer And Update Customer 
+
+method = POST
+url = "http://178.18.250.45:2222/api/method/e_invoice.einvocie.customer_api.create_customer"
+Payload = {
+    "customer_name" : Srting Customer name , 
+    "remote_id" : String local Id  ,
+    "receiver_type" : String One of ['P' , 'B' , 'F'] ,
+    "receiver_id" : String Contain ID Number or tax id ,
+    "country_code" :"EG" ,
+    "governate" : String ,
+    "regioncity" : String ,
+    "street" : String ,
+    "buildingnumber" : Number ,
+    "branchid" : number defaulte 0  
+}
+_________________________________________________________________________________________________
+
+Update Customer 
+
+method = POST
+url = "http://178.18.250.45:2222/api/method/e_invoice.einvocie.customer_api.update_customer"
+Payload = {
+    "customer_name" : Srting Customer name , 
+    "remote_id" : String local Id  ,
+    "receiver_type" : String One of ['P' , 'B' , 'F'] ,
+    "receiver_id" : String Contain ID Number or tax id ,
+    "country_code" :"EG" ,
+    "governate" : String ,
+    "regioncity" : String ,
+    "street" : String ,
+    "buildingnumber" : Number ,
+    "branchid" : number defaulte 0  
+}
+____________________________________________________________________
+
+Create Supplier And Update Supplier
+
+method = POST
+url = "http://178.18.250.45:2222/api/method/e_invoice.einvocie.purchase_api.create_supplier"
+Payload = {
+    "remote_id" : String Supplier local ID ,
+    "supplier_name" : String name , 
+    "tax_id" : String supplier tax id 
+}
+
+UPDATE Supplier 
+
+url = "http://178.18.250.45:2222/api/method/e_invoice.einvocie.purchase_api.update_supplier"
+Payload = {
+    "remote_id" : String Supplier local ID ,
+    "supplier_name" : String name , 
+    "tax_id" : String supplier tax id 
+}
+____________________________________________________________________________________
+
+create purchase invoice  
+
+url = "http://178.18.250.45:2222/api/method/e_invoice.einvocie.purchase_api.create_purchase_invoice"
+Payload = {
+    "supplier" : supplier local ID ,
+    "remote_id" String invoice local ID , 
+    "items" :[
+                                {"item_code" : String Item Local ID ,
+                                "qty": Number , 
+                                "uom" : One OF tax unit of Masure ,
+                                "rate: Float Number
+                                }
+                     
+                            ]
+
+}

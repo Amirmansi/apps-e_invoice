@@ -1,0 +1,49 @@
+Create Item update 
+
+method = POST
+url = "http://178.18.250.45:2222/api/method/e_invoice.einvocie.item_api.create_item"
+headers  =  {
+                            'Authorization': "Token dfe44da42b9032a:d24f54377f0af1b"
+
+                 }
+Payload = {
+      "item_code" : String Local Item Code ,
+      "item_name" String Item Arabic Name , 
+      "zero_tax"  : 0 or 1 ,
+      "uom" : Tax Auth Accepted Unit of Masure , Defaulte uom factor =1  ,
+      "uom_list" :{  "data" :
+                    [                       , List Of Objects 
+                                {
+                                    "uom" : String unit  ,
+                                    "conversion_factor" : number , 
+                                }
+                    ]
+                }
+      
+
+
+}
+
+
+
+create purchase invoice  
+
+url = "http://178.18.250.45:2222/api/method/e_invoice.einvocie.purchase_api.create_purchase_invoice"
+Payload = {
+    "supplier" : supplier local ID ,
+    "remote_id": String invoice local ID , 
+    "has_hold_tax" : 0 Or 1 , 
+    "items" :[
+                                {"item_code" : String Item Local ID ,
+                                "qty": Number , 
+                                "uom" : One OF tax unit of Masure ,
+                                "rate: Float Number
+                                }
+                     
+                            ]
+
+}
+
+
+
+
